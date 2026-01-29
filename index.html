@@ -2,10 +2,16 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Parth’s Hub</title>
+<title>Parth’s Social Hub</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="logo.png">
+
+<!-- Font -->
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
@@ -38,7 +44,7 @@ body{
 .container{
   display:flex;
   gap:40px;
-  transition:.35s ease;
+  transition:transform .35s ease,opacity .35s ease;
 }
 
 .container.exit{
@@ -46,9 +52,9 @@ body{
   opacity:0;
 }
 
-/* Glass boxes */
+/* Glass cards */
 .box{
-  padding:30px;
+  padding:32px;
   border-radius:28px;
   background:rgba(255,255,255,.08);
   backdrop-filter:blur(18px);
@@ -60,9 +66,9 @@ body{
 .box.ott{ width:560px; }
 
 h1{
-  margin:0 0 24px;
+  margin:0 0 26px;
   font-family:'Space Grotesk',sans-serif;
-  font-size:26px;
+  font-size:28px;
 }
 
 /* Grid */
@@ -72,15 +78,10 @@ h1{
   justify-items:center;
 }
 
-.grid.social{
-  grid-template-columns:repeat(5,1fr);
-}
+.grid.social{ grid-template-columns:repeat(5,1fr); }
+.grid.ott{ grid-template-columns:repeat(6,1fr); }
 
-.grid.ott{
-  grid-template-columns:repeat(6,1fr);
-}
-
-/* App item */
+/* App */
 .app{
   display:flex;
   flex-direction:column;
@@ -101,7 +102,7 @@ h1{
   transition:.25s ease;
 }
 
-/* OTT icons */
+/* OTT logos */
 .logo-box{
   width:72px;
   height:72px;
@@ -109,7 +110,7 @@ h1{
   display:flex;
   align-items:center;
   justify-content:center;
-  background:var(--bg);
+  background:rgba(255,255,255,.14);
   transition:.25s ease;
 }
 
@@ -139,24 +140,6 @@ h1{
 .tw{color:#1DA1F2}
 .tg{color:#2AABEE}
 .wa{color:#25D366}
-
-/* OTT backgrounds (NO GLOW) */
-.netflix{--bg:#1a0003}
-.prime{--bg:#00151c}
-.hotstar{--bg:#040b2d}
-.sony{--bg:#001f1f}
-.zee{--bg:#1a002b}
-.mx{--bg:#001a22}
-.shemaroo{--bg:#1a0c00}
-.lionsgate{--bg:#0c0c0c}
-.alt{--bg:#1a000f}
-.eros{--bg:#1a0000}
-.discovery{--bg:#001820}
-.epic{--bg:#1a1300}
-.docu{--bg:#0d1a00}
-.etv{--bg:#001a12}
-.fancode{--bg:#1a0a00}
-.youtube{--bg:#1a0000}
 </style>
 </head>
 
@@ -171,52 +154,119 @@ h1{
     <div class="box social">
       <h1>Parth’s Social Hub</h1>
       <div class="grid social">
+
         <div class="app" data-url="https://instagram.com">
           <div class="icon ig"><i class="fab fa-instagram"></i></div>
           <div class="label">Instagram</div>
         </div>
+
         <div class="app" data-url="https://facebook.com">
           <div class="icon fb"><i class="fab fa-facebook"></i></div>
           <div class="label">Facebook</div>
         </div>
+
         <div class="app" data-url="https://twitter.com">
           <div class="icon tw"><i class="fab fa-x-twitter"></i></div>
           <div class="label">X</div>
         </div>
+
         <div class="app" data-url="https://t.me">
           <div class="icon tg"><i class="fab fa-telegram"></i></div>
           <div class="label">Telegram</div>
         </div>
+
         <div class="app" data-url="https://web.whatsapp.com">
           <div class="icon wa"><i class="fab fa-whatsapp"></i></div>
           <div class="label">WhatsApp</div>
         </div>
+
       </div>
     </div>
 
-    <!-- OTT HUB -->
+    <!-- OTT PLATFORMS -->
     <div class="box ott">
       <h1>OTT Platforms</h1>
       <div class="grid ott">
 
-        <div class="app netflix" data-url="https://netflix.com"><div class="logo-box"><img src="https://cdn.simpleicons.org/netflix/e50914"></div><div class="label">Netflix</div></div>
-        <div class="app prime" data-url="https://primevideo.com"><div class="logo-box"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Prime_Video.png"></div><div class="label">Prime Video</div></div>
-        <div class="app hotstar" data-url="https://hotstar.com"><div class="logo-box"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Disney%2B_Hotstar_logo.svg"></div><div class="label">Hotstar</div></div>
-        <div class="app sony" data-url="https://sonyliv.com"><div class="logo-box"><img src="https://upload.wikimedia.org/wikipedia/en/7/7a/SonyLIV_logo.png"></div><div class="label">Sony LIV</div></div>
-        <div class="app zee" data-url="https://zee5.com"><div class="logo-box"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/ZEE5_logo.png"></div><div class="label">ZEE5</div></div>
-        <div class="app mx" data-url="https://mxplayer.in"><div class="logo-box"><img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/MX_Player_Logo.png"></div><div class="label">MX Player</div></div>
+        <div class="app" data-url="https://netflix.com">
+          <div class="logo-box"><img src="logos/netflix.svg"></div>
+          <div class="label">Netflix</div>
+        </div>
 
-        <div class="app shemaroo" data-url="https://shemaroome.com"><div class="logo-box"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/ShemarooMe_Logo.png"></div><div class="label">ShemarooMe</div></div>
-        <div class="app lionsgate" data-url="https://lionsgateplay.com"><div class="logo-box"><img src="https://upload.wikimedia.org/wikipedia/commons/6/63/Lionsgate_Play_logo.png"></div><div class="label">Lionsgate</div></div>
-        <div class="app alt" data-url="https://altbalaji.com"><div class="logo-box"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/ALTBalaji_logo.png"></div><div class="label">ALTBalaji</div></div>
-        <div class="app eros" data-url="https://erosnow.com"><div class="logo-box"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Eros_Now_logo.png"></div><div class="label">Eros Now</div></div>
-        <div class="app discovery" data-url="https://discoveryplus.in"><div class="logo-box"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Discovery%2B_logo.png"></div><div class="label">Discovery+</div></div>
-        <div class="app epic" data-url="https://epicon.in"><div class="logo-box"><img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Epic_ON_logo.png"></div><div class="label">EPIC ON</div></div>
+        <div class="app" data-url="https://primevideo.com">
+          <div class="logo-box"><img src="logos/prime-video.png"></div>
+          <div class="label">Prime Video</div>
+        </div>
 
-        <div class="app docu" data-url="https://docubay.com"><div class="logo-box"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/DocuBay_logo.png"></div><div class="label">Docubay</div></div>
-        <div class="app etv" data-url="https://etvwin.com"><div class="logo-box"><img src="https://upload.wikimedia.org/wikipedia/commons/4/48/ETV_Win_Logo.png"></div><div class="label">ETV Win</div></div>
-        <div class="app fancode" data-url="https://fancode.com"><div class="logo-box"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/FanCode_Logo.png"></div><div class="label">FanCode</div></div>
-        <div class="app youtube" data-url="https://youtube.com"><div class="logo-box"><img src="https://cdn.simpleicons.org/youtube/ff0000"></div><div class="label">YouTube</div></div>
+        <div class="app" data-url="https://hotstar.com">
+          <div class="logo-box"><img src="logos/hotstar.svg"></div>
+          <div class="label">Hotstar</div>
+        </div>
+
+        <div class="app" data-url="https://sonyliv.com">
+          <div class="logo-box"><img src="logos/sonyliv.png"></div>
+          <div class="label">Sony LIV</div>
+        </div>
+
+        <div class="app" data-url="https://zee5.com">
+          <div class="logo-box"><img src="logos/zee5.png"></div>
+          <div class="label">ZEE5</div>
+        </div>
+
+        <div class="app" data-url="https://mxplayer.in">
+          <div class="logo-box"><img src="logos/mxplayer.png"></div>
+          <div class="label">MX Player</div>
+        </div>
+
+        <div class="app" data-url="https://shemaroome.com">
+          <div class="logo-box"><img src="logos/shemaroome.png"></div>
+          <div class="label">ShemarooMe</div>
+        </div>
+
+        <div class="app" data-url="https://lionsgateplay.com">
+          <div class="logo-box"><img src="logos/lionsgate.jpg"></div>
+          <div class="label">Lionsgate</div>
+        </div>
+
+        <div class="app" data-url="https://altbalaji.com">
+          <div class="logo-box"><img src="logos/altbalaji.png"></div>
+          <div class="label">ALTBalaji</div>
+        </div>
+
+        <div class="app" data-url="https://erosnow.com">
+          <div class="logo-box"><img src="logos/erosnow.png"></div>
+          <div class="label">Eros Now</div>
+        </div>
+
+        <div class="app" data-url="https://discoveryplus.in">
+          <div class="logo-box"><img src="logos/discoveryplus.svg"></div>
+          <div class="label">Discovery+</div>
+        </div>
+
+        <div class="app" data-url="https://epicon.in">
+          <div class="logo-box"><img src="logos/epicon.png"></div>
+          <div class="label">EPIC ON</div>
+        </div>
+
+        <div class="app" data-url="https://docubay.com">
+          <div class="logo-box"><img src="logos/docubay.png"></div>
+          <div class="label">Docubay</div>
+        </div>
+
+        <div class="app" data-url="https://etvwin.com">
+          <div class="logo-box"><img src="logos/etvwin.png"></div>
+          <div class="label">ETV Win</div>
+        </div>
+
+        <div class="app" data-url="https://fancode.com">
+          <div class="logo-box"><img src="logos/fancode.png"></div>
+          <div class="label">FanCode</div>
+        </div>
+
+        <div class="app" data-url="https://youtube.com">
+          <div class="logo-box"><img src="logos/youtube.svg"></div>
+          <div class="label">YouTube</div>
+        </div>
 
       </div>
     </div>
@@ -256,3 +306,4 @@ resize();onresize=resize;
 
 </body>
 </html>
+	
